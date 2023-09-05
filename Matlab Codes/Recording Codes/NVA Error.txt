@@ -1,0 +1,18 @@
+https://superuser.com/questions/1096887/where-can-i-find-logs-on-recent-usb-insertion-in-the-event-viewer
+
+If this error occurs, run manually the following in the command window:
+
+1. For 1 radar experiments
+xep.x4driver_set_fps(0);
+xep.module_reset();
+
+2. For 2 radar experiments
+xep_1.x4driver_set_fps(0);
+pause(0.1)
+xep_2.x4driver_set_fps(0);
+xep_1.module_reset(); 
+pause(0.5) 
+xep_2.module_reset();
+
+If error occurs, most probably you have XethruExplorer software open (or any related software) which also 'listens' for the radars.
+In that case, close XethruExplorer (or any related software) and do the steps above to avoid future errors. 
